@@ -22,13 +22,14 @@ export class AppComponent implements OnInit{
     private apiService: ApiService,
   ) { }
 
-  getEmployee(): any {
-    console.log("Calling API from component");
-    this.apiService.callApi('H001')
+  getEmployee(empInfo: any): any {
+    console.log("Calling API from component - " + empInfo.empId);
+    this.apiService.callApi(empInfo.empId)
     .subscribe (
       (data: Employee) => this.employee  = { ...data }
-    )
-    console.log('Return JSON for emp id ' +  this.employee?.empId + JSON.stringify(this.employee));
+      )
+      console.log('Return JSON for emp id ' +  this.employee?.empId + JSON.stringify(this.employee));
+
   }
 
   ngOnInit() {}

@@ -1,5 +1,12 @@
 <h1>Employee</h1>
 
-<button class="" (click)="getEmployee();">Next</button>
+
+<form #empInfo = "ngForm" (ngSubmit) = "getEmployee(empInfo.value)" >
+    <input type = "text" name = "empId" value="H001" placeholder = "empId" ngModel>
+    <br/>
+    <input type = "text" name = "workDays" value="H001" placeholder = "workDays" ngModel>
+    <br/>
+    <input type = "submit" value = "submit">
+ </form>
 
 <router-outlet></router-outlet>
