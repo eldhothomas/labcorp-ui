@@ -8,6 +8,11 @@ Note: I only have basic knowledge of Angular. I work closely with Angular develo
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+## Pre-requisite
+
+This project expects a REST API at http://localhost:8080/api/employee serving needed data. It uses the Spring Boot  application that is available at https://github.com/eldhothomas/labcorp 
+
+
 ## Functional details 
 
 There is a single page on the application with three forms. Each form results in the display of details of an employee on the top of the page.
