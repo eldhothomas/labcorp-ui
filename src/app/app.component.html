@@ -1,12 +1,32 @@
 <h1>Employee</h1>
 
+Employee Id: <label>{{formEmpId}}</label><br/>
+Work Days: <label>{{formWorkDays}}</label><br/>
+Vacation Days: <label>{{formVacationDays}}</label>
 
-<form #empInfo = "ngForm" (ngSubmit) = "getEmployee(empInfo.value)" >
-    <input type = "text" name = "empId" value="H001" placeholder = "empId" ngModel>
-    <br/>
-    <input type = "text" name = "workDays" value="H001" placeholder = "workDays" ngModel>
+<h2>Retrieve Employee Details</h2>
+<form #empInfo1 = "ngForm" (ngSubmit) = "getEmployee(empInfo1.value)" >
+    <input type = "text" name = "empId" placeholder = "empId" ngModel>
     <br/>
     <input type = "submit" value = "submit">
- </form>
+</form>
+
+<h2>Record Work Days</h2>
+<form #empInfo2 = "ngForm" (ngSubmit) = "recordWork(empInfo2.value)" >
+    <input type = "text" name = "empId"  placeholder = "empId" ngModel>
+    <br/>
+    <input type = "number" name = "workDays" placeholder = "workDays" ngModel>
+    <br/>
+    <input type = "submit" value = "submit">
+</form>
+
+<h2>Take Vacation</h2>
+<form #empInfo3 = "ngForm" (ngSubmit) = "takeVacation(empInfo3.value)" >
+    <input type = "text" name = "empId" placeholder = "empId" ngModel>
+    <br/>
+    <input type = "number" name = "vacationDays" placeholder = "vacationDays" ngModel>
+    <br/>
+    <input type = "submit" value = "submit">
+</form>
 
 <router-outlet></router-outlet>

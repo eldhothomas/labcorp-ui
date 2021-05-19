@@ -18,15 +18,29 @@ export class ApiService {
     private http: HttpClient
   ) { }
 
-  callApi(empId: string): Observable<any> {
-
-    console.log('Calling API from service for employee ' + empId);
-
+  getEmployeeDetails(empId: string): Observable<any> {
+    console.log('Calling API for details for employee id ' + empId);
     return this.http.get<any>(this.ROOT_URL + empId)
     .pipe (
       catchError(this.handleError)
     )
   }
+
+  recordWork(empId: string, workDays: number): Observable<any> {
+    console.log('Calling API for recording work for employee. Id: ' + empId + '. Work days: ' + workDays);
+    return this.http.get<any>(this.ROOT_URL + 'recordWork/' + empId + '/' + workDays)
+    .pipe (
+      catchError(this.handleError)
+    )
+  }  
+
+  takeVacation(empId: string, vacationDays: number): Observable<any> {
+    console.log('Calling API for recording work for employee. Id: ' + empId + '. Vacation days: ' + vacationDays);
+    return this.http.get<any>(this.ROOT_URL + 'takeVacation/' + empId + '/' + vacationDays)
+    .pipe (
+      catchError(this.handleError)
+    )
+  }  
 
   private handleError(error: HttpErrorResponse): any {
     if (error.error instanceof ErrorEvent) {
